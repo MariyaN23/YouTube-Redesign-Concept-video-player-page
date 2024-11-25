@@ -1,0 +1,55 @@
+.sidebar {
+  grid-area: sidebar;
+  margin-left: 2em;
+}
+.sidebar .play {
+  display: flex;
+  justify-content: space-between;
+}
+.sidebar .play div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.sidebar .play .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+.sidebar .play input {
+  display: none;
+}
+.sidebar .play input:checked + span:before {
+  transform: translateX(26px);
+  background-color: var(--switch-color);
+}
+.sidebar .play span {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--input-background);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+.sidebar .play span:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--text-description-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+.sidebar .videos img {
+  max-width: 100%;
+}
+
+/*# sourceMappingURL=Sidebar.module.css.map */

@@ -1,0 +1,8 @@
+.videoPlayerPage {
+  display: grid;
+  grid-template-areas: "header header"
+                        "main sidebar";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 2fr 380px;
+  width: 100%;
+}

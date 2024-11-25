@@ -1,0 +1,59 @@
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4em;
+  width: 100vw;
+}
+header .logo {
+  display: flex;
+  gap: 1em;
+  flex-basis: 100%;
+  max-width: 1050px;
+}
+header .search {
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin-left: 2.5em;
+}
+header .search input {
+  width: 100%;
+  border: none;
+  border-radius: 22px;
+  background-color: var(--input-background);
+  padding: 1em 2em;
+  position: relative;
+}
+header .search input::placeholder {
+  color: var(--input-placeholder-text);
+  opacity: 0.5;
+}
+header .search button {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+header .user {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5em;
+  margin-right: 2em;
+}
+header .user .bell {
+  position: relative;
+}
+header .user .count {
+  position: absolute;
+  top: 0;
+  left: 1.25em;
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  width: 18px;
+  height: 18px;
+}
+
+/*# sourceMappingURL=Header.module.css.map */

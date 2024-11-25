@@ -1,0 +1,53 @@
+.main {
+  grid-area: main;
+  margin-left: 5em;
+}
+.main .mainVideo {
+  width: 100%;
+  border-radius: 14px;
+}
+.main p {
+  color: var(--video-text-color);
+  font-size: 1.6rem;
+}
+.main .videoStats {
+  display: flex;
+  justify-content: space-between;
+}
+.main .videoStats button:not(:last-child) {
+  background-color: var(--input-background);
+  padding: 0.5em 1em;
+  border-radius: 20px;
+  margin-right: 1em;
+}
+.main .videoDescription {
+  display: flex;
+}
+.main .videoDescription img {
+  width: 80px;
+  height: 80px;
+}
+.main .videoDescription .description h2 {
+  margin: 0;
+}
+.main .videoDescription .description p {
+  font-size: 0.8rem;
+}
+.main .videoDescription .description p:last-of-type {
+  font-size: 1.2rem;
+  color: var(--text-description-color);
+}
+.main .videoDescription .description button {
+  font-size: 1.4rem;
+  color: var(--video-text-color);
+}
+.main .videoDescription .subscribe button {
+  color: var(--accent-text-color);
+  text-align: center;
+  background-color: var(--accent-color);
+  border-radius: 20px;
+  width: 150px;
+  padding: 0.5em 1em;
+}
+
+/*# sourceMappingURL=Main.module.css.map */
