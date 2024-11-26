@@ -1,4 +1,4 @@
-header {
+.header {
   grid-area: header;
   display: flex;
   justify-content: space-between;
@@ -6,19 +6,19 @@ header {
   padding: 1.4em;
   width: 100vw;
 }
-header .logo {
+.header .logo {
   display: flex;
   gap: 1em;
   flex-basis: 100%;
   max-width: 1050px;
 }
-header .search {
+.header .search {
   width: 100%;
   display: flex;
   position: relative;
   margin-left: 2.5em;
 }
-header .search input {
+.header .search input {
   width: 100%;
   border: none;
   border-radius: 22px;
@@ -26,25 +26,25 @@ header .search input {
   padding: 1em 2em;
   position: relative;
 }
-header .search input::placeholder {
+.header .search input::placeholder {
   color: var(--input-placeholder-text);
   opacity: 0.5;
 }
-header .search button {
+.header .search button {
   position: absolute;
   top: 1em;
   right: 1em;
 }
-header .user {
+.header .user {
   display: flex;
   justify-content: space-between;
   gap: 2.5em;
   margin-right: 2em;
 }
-header .user .bell {
+.header .user .bell {
   position: relative;
 }
-header .user .count {
+.header .user .count {
   position: absolute;
   top: 0;
   left: 1.25em;
@@ -54,6 +54,37 @@ header .user .count {
   font-size: 0.75rem;
   width: 18px;
   height: 18px;
+}
+.header .user button:last-child {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 0.5em 0.625em 0 0.625em;
+  }
+  .header .logo button:first-child {
+    display: none;
+  }
+  .header .search {
+    margin-left: 4.5em;
+  }
+  .header .search input {
+    display: none;
+  }
+  .header .search button {
+    position: static;
+    margin-right: 1em;
+  }
+  .header .user {
+    margin-right: 0;
+  }
+  .header .user button:not(:last-child) {
+    display: none;
+  }
+  .header .user button:last-child {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=Header.module.css.map */

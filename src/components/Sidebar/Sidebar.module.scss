@@ -1,63 +1,169 @@
 .sidebar {
   grid-area: sidebar;
-  margin-left: 2em;
 
-  .play {
-    display: flex;
-    justify-content: space-between;
+  .sidebarContainer {
+    max-width: 370px;
 
-    div {
+    .play {
       display: flex;
-      align-items: center;
-      gap: 1em;
-    }
+      justify-content: space-between;
 
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-    }
+      h2 {
+        margin: 0;
+        font-size: 2rem;
+      }
 
-    input {
-      display: none;
+      p {
+        text-transform: uppercase;
+      }
 
-      &:checked + span:before {
-        transform: translateX(26px);
-        background-color: var(--switch-color);
+      div {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+      }
+
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+      }
+
+      input {
+        display: none;
+
+        &:checked + span:before {
+          transform: translateX(26px);
+          background-color: var(--switch-color);
+        }
+      }
+
+      span {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--input-background);
+        -webkit-transition: .4s;
+        transition: .4s;
+        border-radius: 34px;
+
+        &:before {
+          position: absolute;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: var(--text-description-color);
+          -webkit-transition: .4s;
+          transition: .4s;
+          border-radius: 50%;
+        }
       }
     }
 
-    span {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var(--input-background);
-      -webkit-transition: .4s;
-      transition: .4s;
-      border-radius: 34px;
+    .videos {
+      display: flex;
+      flex-direction: column;
+      gap: 3em;
 
-      &:before {
-        position: absolute;
-        content: "";
-        height: 26px;
-        width: 26px;
-        left: 4px;
-        bottom: 4px;
-        background-color: var(--text-description-color);
-        -webkit-transition: .4s;
-        transition: .4s;
-        border-radius: 50%;
+      .video {
+        position: relative;
+        cursor: pointer;
+
+        span {
+          position: absolute;
+          right: 1rem;
+          bottom: 5rem;
+          display: flex;
+          justify-content: center;
+          color: var(--accent-text-color);
+          font-size: 0.875rem;
+          background-color: var(--background-color);
+          border-radius: 12px;
+          padding: 0.25em;
+          width: 47px;
+        }
+
+        img {
+          width: 100%;
+        }
+
+        h2 {
+          margin: 0;
+        }
+
+        div {
+          display: flex;
+          justify-content: space-between;
+
+          p {
+            color: var(--video-text-color);
+            margin: 0;
+          }
+        }
       }
     }
   }
+}
 
-  .videos {
-    img {
-      max-width: 100%;
+@media screen and (max-width: 576px) {
+  .sidebar {
+    .sidebarContainer {
+      margin: 2em 1em 2em 1em;
+      width: 100vw;
+
+      .play {
+        h2 {
+          font-size: 1.2rem;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+      }
+
+      .videos {
+        margin-bottom: 5em;
+
+        .video {
+
+          span {
+            right: 1em;
+            bottom: 4rem;
+          }
+
+          h2 {
+            font-size: 0.9rem;
+            margin: 0;
+          }
+
+          div {
+            display: flex;
+            justify-content: space-between;
+          }
+
+          img {
+            width: 90vw;
+          }
+
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 100%;
+        background-color: var(--line-color);
+      }
     }
   }
 }

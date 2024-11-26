@@ -1,66 +1,231 @@
 .main {
   grid-area: main;
-  margin-left: 5em;
 
-  .mainVideo {
-    width: 100%;
-    border-radius: 14px;
-  }
+  .mainContainer {
+    margin-left: 5em;
+    width: 90%;
 
-  p {
-    color: var(--video-text-color);
-    font-size: 1.6rem;
-  }
-
-  .videoStats {
-    display: flex;
-    justify-content: space-between;
-
-    button:not(:last-child) {
-      background-color: var(--input-background);
-      padding: 0.5em 1em;
-      border-radius: 20px;
-      margin-right: 1em;
-    }
-  }
-
-  .videoDescription {
-    display: flex;
-
-    img {
-      width: 80px;
-      height: 80px;
+    h1 {
+      margin-bottom: 0;
+      font-size: 2rem;
     }
 
-    .description {
-      h2 {
-        margin: 0;
-      }
+    .mainVideo {
+      width: 100%;
+      border-radius: 14px;
 
-      p {
-        font-size: 0.8rem;
+      &:last-of-type {
+        display: none;
       }
+    }
 
-      p:last-of-type {
-        font-size: 1.2rem;
-        color: var(--text-description-color);
-      }
+    p {
+      color: var(--video-text-color);
+      font-size: 1.6rem;
+      margin-top: 0;
+    }
+
+    .videoTitle {
+      display: flex;
+      justify-content: space-between;
 
       button {
-        font-size: 1.4rem;
-        color: var(--video-text-color);
+        display: none;
       }
     }
 
-    .subscribe {
+    .videoStatsContainer {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2em;
 
-      button {
-        color: var(--accent-text-color);
-        text-align: center;
-        background-color: var(--accent-color);
-        border-radius: 20px;
-        width: 150px;
-        padding: 0.5em 1em;
+      .videoStats {
+        display: flex;
+        justify-content: space-between;
+
+        button:not(:last-child) {
+          background-color: var(--input-background);
+          padding: 0.5em 1em;
+          border-radius: 20px;
+          margin-right: 1em;
+          color: var(--button-text-color);
+
+          img {
+            margin-right: 0.5em;
+          }
+        }
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        background-color: var(--line-color);
+      }
+    }
+
+    .videoDescription {
+      display: flex;
+      gap: 1em;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .description {
+        h2 {
+          margin: 0;
+        }
+
+        span {
+          display: none;
+        }
+
+        p {
+          font-size: 0.8rem;
+        }
+
+        p:last-of-type {
+          font-size: 1rem;
+          color: var(--text-description-color);
+        }
+
+        button {
+          padding: 0;
+          font-size: 1.4rem;
+          color: var(--video-text-color);
+        }
+      }
+
+      .subscribe {
+
+        button {
+          color: var(--accent-text-color);
+          text-align: center;
+          background-color: var(--accent-color);
+          border-radius: 20px;
+          width: 150px;
+          padding: 0.5em 1em;
+
+          &:last-child {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .main {
+    .mainContainer {
+      margin: 1em 0;
+      width: 100vw;
+
+      .mainVideo {
+        border-radius: 0;
+
+        &:first-of-type {
+          display: none;
+        }
+
+        &:last-of-type {
+          display: inline-block;
+        }
+      }
+
+      .videoTitle {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0.5em;
+
+        h1 {
+          margin: 0 0.5em;
+          font-size: 1.3rem;
+        }
+
+        button {
+          display: block;
+        }
+      }
+
+      .videoStatsContainer {
+        margin: 0 1em 1em 1em;
+
+        .videoStats {
+          flex-direction: column;
+
+          p {
+            margin: 0 0 2em;
+            font-size: 0.8rem;
+          }
+
+          div {
+            display: flex;
+            align-items: center;
+            height: 40px;
+          }
+
+          button {
+            display: flex;
+            align-items: center;
+
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+
+        &::after {
+          margin-top: 1em;
+        }
+      }
+
+      .videoDescription {
+        margin: 0 0.5em;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .description p, button {
+          display: none;
+        }
+
+        .description {
+          display: flex;
+          flex-direction: column;
+
+          h2 {
+            display: block;
+            font-size: 1rem;
+          }
+
+          span {
+            display: block;
+            color: var(--video-text-color);
+            font-size: 0.8rem;
+          }
+        }
+
+        .subscribe {
+          button {
+            width: 100%;
+            margin-left: 2em;
+
+            &:last-child {
+              display: flex;
+              background: none;
+              color: var(--accent-color);
+              padding: 0;
+            }
+          }
+        }
       }
     }
   }

@@ -2,6 +2,7 @@ import {Header} from './Header/Header.tsx'
 import s from './VideoPlayerPage.module.scss'
 import {Main} from './Main/Main.tsx'
 import {Sidebar} from './Sidebar/Sidebar.tsx'
+import {Menu} from "./Menu/Menu.tsx";
 
 export const VideoPlayerPage = () => {
     return (
@@ -9,6 +10,7 @@ export const VideoPlayerPage = () => {
             <Header/>
             <Main/>
             <Sidebar/>
+            <Menu/>
         </div>
     )
 }

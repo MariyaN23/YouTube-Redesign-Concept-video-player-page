@@ -2,7 +2,16 @@
   display: grid;
   grid-template-areas: "header header"
                         "main sidebar";
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 2fr 380px;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 2fr 0.6fr;
   width: 100%;
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 576px) {
+  .videoPlayerPage {
+    grid-template-areas: "header" "main" "sidebar";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
 }
