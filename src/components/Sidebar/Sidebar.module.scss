@@ -6,6 +6,7 @@
 
     .play {
       display: flex;
+      align-items: center;
       justify-content: space-between;
 
       h2 {
@@ -115,7 +116,7 @@
   .sidebar {
     .sidebarContainer {
       margin: 2em 1em 2em 1em;
-      width: 100vw;
+      width: 90vw;
 
       .play {
         h2 {
@@ -125,16 +126,29 @@
         p {
           font-size: 0.8rem;
         }
+
+        .switch {
+          width: 50px;
+          height: 22px;
+
+          span {
+            &:before {
+              height: 16px;
+              width: 16px;
+            }
+          }
+        }
       }
 
       .videos {
         margin-bottom: 5em;
 
         .video {
+          width: 90vw;
 
           span {
             right: 1em;
-            bottom: 4rem;
+            bottom: 4em;
           }
 
           h2 {
@@ -162,6 +176,25 @@
         display: block;
         height: 1px;
         width: 100%;
+        background-color: var(--line-color);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .sidebar {
+    .sidebarContainer {
+      margin: 2em auto;
+      max-width: 60%;
+
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        height: 1px;
+        right: 5%;
+        width: 90vw;
         background-color: var(--line-color);
       }
     }

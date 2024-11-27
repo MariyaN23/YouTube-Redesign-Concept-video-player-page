@@ -7,7 +7,7 @@
   overflow-x: hidden;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 1024px) {
   .videoPlayerPage {
     grid-template-areas: "header" "main" "sidebar";
     grid-template-columns: 1fr;

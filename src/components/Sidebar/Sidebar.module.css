@@ -6,6 +6,7 @@
 }
 .sidebar .sidebarContainer .play {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .sidebar .sidebarContainer .play h2 {
@@ -97,7 +98,7 @@
 @media screen and (max-width: 576px) {
   .sidebar .sidebarContainer {
     margin: 2em 1em 2em 1em;
-    width: 100vw;
+    width: 90vw;
   }
   .sidebar .sidebarContainer .play h2 {
     font-size: 1.2rem;
@@ -105,12 +106,23 @@
   .sidebar .sidebarContainer .play p {
     font-size: 0.8rem;
   }
+  .sidebar .sidebarContainer .play .switch {
+    width: 50px;
+    height: 22px;
+  }
+  .sidebar .sidebarContainer .play .switch span:before {
+    height: 16px;
+    width: 16px;
+  }
   .sidebar .sidebarContainer .videos {
     margin-bottom: 5em;
   }
+  .sidebar .sidebarContainer .videos .video {
+    width: 90vw;
+  }
   .sidebar .sidebarContainer .videos .video span {
     right: 1em;
-    bottom: 4rem;
+    bottom: 4em;
   }
   .sidebar .sidebarContainer .videos .video h2 {
     font-size: 0.9rem;
@@ -131,6 +143,21 @@
     display: block;
     height: 1px;
     width: 100%;
+    background-color: var(--line-color);
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .sidebar .sidebarContainer {
+    margin: 2em auto;
+    max-width: 60%;
+  }
+  .sidebar .sidebarContainer::before {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 1px;
+    right: 5%;
+    width: 90vw;
     background-color: var(--line-color);
   }
 }

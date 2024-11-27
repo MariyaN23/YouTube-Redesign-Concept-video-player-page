@@ -120,7 +120,7 @@
 @media screen and (max-width: 576px) {
   .main {
     .mainContainer {
-      margin: 1em 0;
+      margin: 1em 0 0 0;
       width: 100vw;
 
       .mainVideo {
@@ -227,6 +227,14 @@
           }
         }
       }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 1024px) {
+  .main {
+    .mainContainer {
+      margin: 0 auto;
     }
   }
 }
