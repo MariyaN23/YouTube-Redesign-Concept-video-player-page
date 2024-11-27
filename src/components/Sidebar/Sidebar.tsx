@@ -1,9 +1,11 @@
 import s from './Sidebar.module.scss'
-import video1 from '../../assets/images/Sidebar/Video1.png'
-import video2 from '../../assets/images/Sidebar/Video2.png'
-import video3 from '../../assets/images/Sidebar/Video3.png'
+import {SidebarData} from '../data/sidebar-data.ts'
 
-export const Sidebar = () => {
+type SidebarPropsType = {
+    data: SidebarData
+}
+
+export const Sidebar = ({data}: SidebarPropsType) => {
     return (
         <section className={s.sidebar}>
             <div className={s.sidebarContainer}>
@@ -18,33 +20,17 @@ export const Sidebar = () => {
                     </div>
                 </div>
                 <div className={s.videos}>
-                    <div className={s.video}>
-                        <img src={video1} alt={'Video'}/>
-                        <span>8:00</span>
-                        <h2>Baby Monitor Technology</h2>
-                        <div>
-                            <p>123k views</p>
-                            <p>Dollie Blair</p>
+                    {data.videos.map((video, index) => (
+                        <div className={s.video} key={index}>
+                            <img src={video.video} alt={'Video'}/>
+                            <span>{video.duration}</span>
+                            <h2>{video.title}</h2>
+                            <div>
+                                <p>{video.views}k views</p>
+                                <p>{video.author}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className={s.video}>
-                        <img src={video2} alt={'Video'}/>
-                        <span>8:00</span>
-                        <h2>A Good Autoresponder</h2>
-                        <div>
-                            <p>123k views</p>
-                            <p>Dollie Blair</p>
-                        </div>
-                    </div>
-                    <div className={s.video}>
-                        <img src={video3} alt={'Video'}/>
-                        <span>8:00</span>
-                        <h2>Selecting The Right Hotel</h2>
-                        <div>
-                            <p>123k views</p>
-                            <p>Dollie Blair</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>

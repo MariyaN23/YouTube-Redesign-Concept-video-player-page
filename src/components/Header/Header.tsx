@@ -4,11 +4,15 @@ import search from '../../assets/images/Header/Search.svg'
 import video from '../../assets/images/Header/Video.svg'
 import shape from '../../assets/images/Header/CombinedShape.svg'
 import bell from '../../assets/images/Header/Bell.svg'
-import userImg from '../../assets/images/Header/Userpic.jpg'
 import more from '../../assets/images/Header/More.svg'
 import s from './Header.module.scss'
+import {HeaderData} from "../data/header-data.ts";
 
-export const Header = () => {
+type HeaderPropsType = {
+    data: HeaderData
+}
+
+export const Header = ({data}: HeaderPropsType) => {
     return (
         <header className={s.header}>
             <div className={s.logo}>
@@ -27,9 +31,9 @@ export const Header = () => {
                 <button><img src={shape} alt="Combined Shape"/></button>
                 <button className={s.bell}>
                     <img src={bell} alt="Bell"/>
-                    <span className={s.count}>3</span>
+                    <span className={s.count}>{data.notifications}</span>
                 </button>
-                <button><img src={userImg} alt="User image"/></button>
+                <button><img src={data.image} alt="User image"/></button>
                 <button><img src={more} alt="More info"/></button>
             </div>
         </header>
