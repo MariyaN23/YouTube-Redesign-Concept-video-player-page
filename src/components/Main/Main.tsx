@@ -1,10 +1,10 @@
 import s from './Main.module.scss'
-import like from '../../assets/images/Main/Like.svg'
-import dislike from '../../assets/images/Main/Dislike.svg'
-import share from '../../assets/images/Main/Share.svg'
-import more from '../../assets/images/Main/More.svg'
-import arrow from '../../assets/images/Main/ArrowDown.svg'
 import {MainVideoData} from "../data/main-data.ts";
+import {LikeIcon} from "../../assets/icons/Main/LikeIcon.tsx";
+import {DislikeIcon} from "../../assets/icons/Main/DislikeIcon.tsx";
+import {ShareIcon} from "../../assets/icons/Main/ShareIcon.tsx";
+import {MoreInfoIcon} from "../../assets/icons/Main/MoreInfoIcon.tsx";
+import {ArrowDownIcon} from "../../assets/icons/Main/ArrowDownIcon.tsx";
 
 type MainPropsType = {
     data: MainVideoData
@@ -18,16 +18,16 @@ export const Main = ({data}: MainPropsType) => {
                 <img src={data.videoMobile} alt={'Main video'} className={s.mainVideo}/>
                 <div className={s.videoTitle}>
                     <h1>{data.title}</h1>
-                    <button><img src={arrow} alt={'More info'}/></button>
+                    <button><ArrowDownIcon/></button>
                 </div>
                 <div className={s.videoStatsContainer}>
                 <div className={s.videoStats}>
                         <p>{data.views}k views</p>
                         <div>
-                            <button><img src={like} alt={'Likes count'}/>{data.likes}k</button>
-                            <button><img src={dislike} alt={'Dislikes count'}/>{data.dislikes}k</button>
-                            <button><img src={share} alt={'Share'}/>Share</button>
-                            <button><img src={more} alt={'More info'}/></button>
+                            <button><LikeIcon/> {data.likes}k</button>
+                            <button><DislikeIcon/> {data.dislikes}k</button>
+                            <button><ShareIcon/> Share</button>
+                            <button><MoreInfoIcon/></button>
                         </div>
                     </div>
                 </div>

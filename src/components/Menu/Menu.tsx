@@ -1,16 +1,16 @@
 import s from './Menu.module.scss'
-import home from '../../assets/images/Menu/Home.svg'
-import trending from '../../assets/images/Menu/Trending.svg'
-import subscriptions from '../../assets/images/Menu/Subscriptions.svg'
-import library from '../../assets/images/Menu/Library.svg'
+import {HomeIcon} from "../../assets/icons/Menu/HomeIcon.tsx";
+import {LibraryIcon} from "../../assets/icons/Menu/LibraryIcon.tsx";
+import {TrendingIcon} from "../../assets/icons/Menu/TrendingIcon.tsx";
+import {SubscriptionsIcon} from "../../assets/icons/Menu/SubscriptionsIcon.tsx";
 
 export const Menu = () => {
     return (
         <nav className={s.menu}>
-            <a><img src={home} alt="Home"/>Home</a>
-            <a><img src={trending} alt="Trending"/>Trending</a>
-            <a><img src={subscriptions} alt="Subscriptions"/>Subscriptions</a>
-            <a><img src={library} alt="Library"/>Library</a>
+            <a><HomeIcon/>Home</a>
+            <a><TrendingIcon/>Trending</a>
+            <a><SubscriptionsIcon/>Subscriptions</a>
+            <a><LibraryIcon/>Library</a>
         </nav>
     )
 }
