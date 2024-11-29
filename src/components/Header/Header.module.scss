@@ -1,3 +1,5 @@
+@import '../../styles/colors';
+
 .header {
   grid-area: header;
   display: flex;
@@ -23,13 +25,13 @@
       width: 100%;
       border: none;
       border-radius: 22px;
-      background-color: var(--input-background);
+      background-color: rgba($input-background, 0.3);
       padding: 1em 2em;
       position: relative;
     }
 
     input::placeholder {
-      color: var(--input-placeholder-text);
+      color: $input-placeholder-text;
       opacity: 0.5;
     }
 
@@ -54,8 +56,8 @@
       position: absolute;
       top: 0;
       left: 1.25em;
-      background-color: var(--accent-color);
-      color: var(--accent-text-color);
+      background-color: $accent-color;
+      color: $accent-text-color;
       border-radius: 50%;
       font-size: 0.75rem;
       width: 18px;
