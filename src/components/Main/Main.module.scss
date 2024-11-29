@@ -1,5 +1,5 @@
-@import "../../styles/colors";
-@import "../../styles/typography";
+@use "../../styles/colors" as *;
+@use "../../styles/typography" as *;
 
 .main {
   grid-area: main;

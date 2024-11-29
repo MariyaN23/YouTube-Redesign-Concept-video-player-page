@@ -1,5 +1,5 @@
-@import '../../styles/_colors';
-@import '../../styles/typography';
+@use '../../styles/_colors' as *;
+@use '../../styles/typography' as *;
 
 .sidebar {
   grid-area: sidebar;
