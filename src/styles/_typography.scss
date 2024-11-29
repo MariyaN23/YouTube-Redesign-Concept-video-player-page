@@ -5,6 +5,16 @@
   font-weight: normal;
 }
 
-:root {
-  --font-family-primary: 'Muli', sans-serif;
-}
+//fonts
+$font-size-xxs: 8px;
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-base: 16px;
+$font-size-l: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 24px;
+$font-size-title: 32px;
+
+//media
+$breakpoint-sm: 576px;
+$breakpoint-lg: 1024px;

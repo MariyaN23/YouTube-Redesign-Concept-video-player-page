@@ -1,4 +1,5 @@
 @import '../../styles/_colors';
+@import '../../styles/typography';
 
 .sidebar {
   grid-area: sidebar;
@@ -13,7 +14,7 @@
 
       h2 {
         margin: 0;
-        font-size: 2rem;
+        font-size: $font-size-title;
       }
 
       p {
@@ -85,7 +86,7 @@
           display: flex;
           justify-content: center;
           color: $accent-text-color;
-          font-size: 0.875rem;
+          font-size: $font-size-s;
           background-color: rgba($background-color, 0.3);
           border-radius: 12px;
           padding: 0.25em;
@@ -114,7 +115,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $breakpoint-sm) {
   .sidebar {
     .sidebarContainer {
       margin: 2em 1em 2em 1em;
@@ -122,11 +123,11 @@
 
       .play {
         h2 {
-          font-size: 1.2rem;
+          font-size: $font-size-l;
         }
 
         p {
-          font-size: 0.8rem;
+          font-size: $font-size-s;
         }
 
         .switch {
@@ -149,12 +150,12 @@
           width: 90vw;
 
           span {
-            right: 1em;
-            bottom: 4em;
+            right: 0.5em;
+            bottom: 4.5em;
           }
 
           h2 {
-            font-size: 0.9rem;
+            font-size: $font-size-base;
             margin: 0;
           }
 
@@ -168,7 +169,7 @@
           }
 
           p {
-            font-size: 0.8rem;
+            font-size: $font-size-s;
           }
         }
       }
@@ -184,7 +185,7 @@
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 1024px) {
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-lg) {
   .sidebar {
     .sidebarContainer {
       margin: 2em auto;

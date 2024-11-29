@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/typography";
 
 .main {
   grid-area: main;
@@ -9,7 +10,7 @@
 
     h1 {
       margin-bottom: 0;
-      font-size: 2rem;
+      font-size: $font-size-title;
     }
 
     .mainVideo {
@@ -23,7 +24,7 @@
 
     p {
       color: $video-text-color;
-      font-size: 1.6rem;
+      font-size: $font-size-xxl;
       margin-top: 0;
     }
 
@@ -85,17 +86,17 @@
         }
 
         p {
-          font-size: 0.8rem;
+          font-size: $font-size-s;
         }
 
         p:last-of-type {
-          font-size: 1rem;
+          font-size: $font-size-base;
           color: rgba($text-description-color, 0.6);
         }
 
         button {
           padding: 0;
-          font-size: 1.4rem;
+          font-size: $font-size-xxl;
           color: $video-text-color;
         }
       }
@@ -119,7 +120,7 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $breakpoint-sm) {
   .main {
     .mainContainer {
       margin: 1em 0 0 0;
@@ -144,7 +145,7 @@
 
         h1 {
           margin: 0 0.5em;
-          font-size: 1.3rem;
+          font-size: $font-size-xl;
         }
 
         button {
@@ -160,7 +161,7 @@
 
           p {
             margin: 0 0 2em;
-            font-size: 0.8rem;
+            font-size: $font-size-s;
           }
 
           div {
@@ -172,9 +173,14 @@
           button {
             display: flex;
             align-items: center;
+            justify-content: space-between;
 
             &:last-child {
               display: none;
+            }
+
+            &:not(:last-child) {
+              margin-right: 0.5em;
             }
           }
         }
@@ -205,13 +211,13 @@
 
           h2 {
             display: block;
-            font-size: 1rem;
+            font-size: $font-size-base;
           }
 
           span {
             display: block;
             color: $video-text-color;
-            font-size: 0.8rem;
+            font-size: $font-size-s;
           }
         }
 
@@ -233,7 +239,7 @@
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 1024px) {
+@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-lg) {
   .main {
     .mainContainer {
       margin: 0 auto;

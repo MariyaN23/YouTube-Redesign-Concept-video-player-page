@@ -1,10 +1,11 @@
 @import '../../styles/colors';
+@import '../../styles/typography';
 
 .menu {
   display: none;
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: $breakpoint-sm) {
   .menu {
     display: flex;
     width: 100%;
@@ -19,10 +20,10 @@
       flex-direction: column;
       align-items: center;
       flex: 1;
-      font-size: 0.5rem;
+      font-size: $font-size-xxs;
       padding: 0 1em;
       margin: 2em;
-      color: rgba(0, 0, 0, 0.24);
+      color: rgba($background-color, 0.24);
     }
 
     img {
